@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/products")
 public class ProductsController {
 
-    @GetMapping
+    @GetMapping("/hello")
     public String hello(String name) {
         return "Hello " + name;
     }
@@ -24,7 +24,7 @@ public class ProductsController {
 
     @PostMapping
     public Product addProduct(@RequestBody Product product) {
-        product.setId(1);
+//        product.setId(1);
         return product;
     }
 }

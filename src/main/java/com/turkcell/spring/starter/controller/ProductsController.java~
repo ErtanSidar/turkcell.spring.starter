@@ -1,5 +1,6 @@
 package com.turkcell.spring.starter.controller;
 
+import com.turkcell.spring.starter.entity.Product;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,5 +20,11 @@ public class ProductsController {
     @GetMapping
     public String helloWithRequestParam(@RequestParam String name) {
         return "Hello" + name;
+    }
+
+    @PostMapping
+    public Product addProduct(@RequestBody Product product) {
+//        product.setId(1);
+        return product;
     }
 }
