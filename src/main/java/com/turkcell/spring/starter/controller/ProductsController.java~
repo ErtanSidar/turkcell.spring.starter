@@ -1,9 +1,6 @@
 package com.turkcell.spring.starter.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -15,7 +12,12 @@ public class ProductsController {
     }
 
     @GetMapping("/{name}")
-    public String helloWithParam(@PathVariable String name) {
+    public String helloWithPathVariable(@PathVariable String name) {
         return "Hello " + name;
+    }
+
+    @GetMapping
+    public String helloWithRequestParam(@RequestParam String name) {
+        return "Hello" + name;
     }
 }
