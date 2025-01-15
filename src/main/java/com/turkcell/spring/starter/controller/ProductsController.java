@@ -16,21 +16,6 @@ public class ProductsController {
         this.productService = productService;
     }
 
-    @GetMapping("/hello")
-    public String hello(String name) {
-        return "Hello " + name;
-    }
-
-    @GetMapping("/{name}")
-    public String helloWithPathVariable(@PathVariable String name) {
-        return "Hello " + name;
-    }
-
-    @GetMapping
-    public String helloWithRequestParam(@RequestParam String name) {
-        return "Hello" + name;
-    }
-
     @GetMapping("{id}")
     public Product getById(@PathVariable int id) {
         return productService.getById(id);
